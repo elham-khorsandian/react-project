@@ -1,6 +1,5 @@
 import React from "react";
 import "./Filter.scss";
-import beers from "../../data/beers";
 
 const Filter = (props) => {
   const { onChange, selected } = props;
