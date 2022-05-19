@@ -13,32 +13,13 @@ const App = () => {
     console.log("Filter changed!");
     executeFilter();
   }, [searchTerm, filterTerm]);
-
+  //getting the beers from API
   const getBeers = async () => {
     const url = "https://api.punkapi.com/v2/beers";
     const response = await fetch(url);
     const data = await response.json();
-    //setSearchedBeers(data.beer);
     setSearchedBeers(data);
     setAllBeers(data);
-  };
-  const getByName = async (name) => {
-    const url = "";
-    const response = await fetch(url);
-    const data = await response.json();
-    setSearchedBeers(data.message); //???
-  };
-  const getByAbv = async (abv) => {
-    const url = "";
-    const response = await fetch(url);
-    const data = await response.json();
-    setFilterTerm(data.message); //????
-  };
-  const getByPh = async (ph) => {
-    const url = "";
-    const response = await fetch(url);
-    const data = await response.json();
-    setFilterTerm(data.message); //???
   };
 
   useEffect(() => {
@@ -61,6 +42,7 @@ const App = () => {
       );
     });
   };
+  //search function
   const executeFilter = () => {
     console.log(allBeers);
     let newBeers = allBeers.filter((beer) => {
@@ -70,6 +52,7 @@ const App = () => {
         return false;
       }
     });
+    //filter function
     switch (filterTerm) {
       case "ABV": {
         newBeers = newBeers.filter((beer) => {

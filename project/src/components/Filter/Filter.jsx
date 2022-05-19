@@ -4,7 +4,7 @@ import "./Filter.scss";
 const Filter = (props) => {
   const { onChange, selected } = props;
   //const
-  const filters = ["all", "ABV", "acidic", "classic-range"];
+  const filters = ["all", "ABV > 6%", "acidic(PH < 4"];
   const filterOptionsJSX = filters.map((filter) => {
     return <option value={filter}>{filter}</option>;
   });
