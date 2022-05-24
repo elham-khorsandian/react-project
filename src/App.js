@@ -13,7 +13,9 @@ const App = () => {
     console.log("Filter changed!");
     executeFilter();
   }, [searchTerm, filterTerm]);
+  
   //getting the beers from API
+
   const getBeers = async () => {
     const url = "https://api.punkapi.com/v2/beers";
     const response = await fetch(url);

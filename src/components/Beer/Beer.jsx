@@ -1,17 +1,8 @@
 import "./Beer.scss";
 
-const Beer = (props) => {
+const Beer = props => {
   //destructuring
-  const {
-    image_url,
-    name,
-    tagline,
-    first_brewed,
-    abv,
-    classic_range,
-    ph,
-    description,
-  } = props;
+  const { image_url, name, tagline, first_brewed, abv, classic_range, ph, description } = props;
 
   return (
     <div className="beer">
